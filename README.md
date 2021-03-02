@@ -108,15 +108,16 @@ named `method` and a private helper method named `helper`. These methods solve a
    
 ### Problem 3
 
-1. In the `main/java/problem3` directory, create a class named `FloydsAlgorithm`.
-2. In the `FloydsAlgorithm` class, create a static method named `floydPaths` that takes a 2D-array of doubles 
+1. In the `main/java` directory, create a package named `problem3`.
+2. In this package, create a class named `FloydsAlgorithm`.
+3. In the `FloydsAlgorithm` class, create a static method named `floydPaths` that takes a 2D-array of doubles 
    named `weights` and a 2D-array of integers named `paths`, and does not return anything. Implement Floyd's 
    algorithm presented in Lecture 5.2, slide 20. Note that we are using an array of doubles for the weights 
    because the`Double` wrapper class contains a constant for infinity (and the Integer wrapper class does not). 
    You can assume that all of the elements in the `paths` array will be initialized to -1. 
    - Uncomment and run the tests in `test/java/problem3/FloydsAlgorithmTest.java` that begin with the word `floyd`.
    - Run the code analyzers and push to GitHub.
-3. In the `FloydsAlgorithm` class, create a static method named `getPath` that takes a 2D-array of integers 
+4. In the `FloydsAlgorithm` class, create a static method named `getPath` that takes a 2D-array of integers 
    named `paths` and two integers (i and j) and returns a `String`. You are going to modify the `printPath` 
    algorithm in Slide 21 to return a String composed of the intermediate vertices in the path from i to j,
    separated by spaces. For example, `printPath(paths, 4, 2)` will print out `0 3 `. Remember that because we
@@ -124,4 +125,4 @@ named `method` and a private helper method named `helper`. These methods solve a
    5 to vertex 3, which is vertex 1, then vertex 4. You may find it helpful to create a private helper method.
    - Uncomment and run the tests in `test/java/problem3/FloydsAlgorithmTest.java` that begin with the word `path`.
    - Run the code analyzers and push to GitHub.
-4. You can create a `main` method or a demo class with the `main` method to help you debug and analyze your code.
+5. You can create a `main` method or a demo class with the `main` method to help you debug and analyze your code.
