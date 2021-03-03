@@ -9,15 +9,20 @@ class FloydsAlgorithmTest {
     // DON'T TOUCH THESE VARIABLES AND METHODS
     //-------------------------------------------------------
     static final double inf = Double.POSITIVE_INFINITY;
-    static double[][] weights1 = {
-            {0, 1, inf, 1, 5},
-            {9, 0, 3, 2, inf},
-            {inf, inf, 0, 4, inf},
-            {inf, inf, 2, 0, 3},
-            {3, inf, inf, inf, 0}
-    };
 
-    static double[][] weights2 = {
+    public static double[][] initializeWeights1() {
+        double[][] weights1 = {
+                {0, 1, inf, 1, 5},
+                {9, 0, 3, 2, inf},
+                {inf, inf, 0, 4, inf},
+                {inf, inf, 2, 0, 3},
+                {3, inf, inf, inf, 0}
+        };
+        return weights1;
+    }
+
+    public static double[][] initializeWeights2() {
+        double[][] weights2 = {
             {0, 4, inf, inf, inf, 10, inf},
             {3, 0, inf, 18, inf, inf, inf},
             {inf, 6, 0, inf, inf, inf, inf},
@@ -25,7 +30,9 @@ class FloydsAlgorithmTest {
             {inf, inf, 12, 1, 0, inf, inf},
             {inf, inf, inf, inf, inf, 0, 10},
             {inf, inf, inf, 8, inf, inf, 0}
-    };
+        };
+        return weights2;
+    }
 
     static void initializePaths(int[][] paths) {
         for (int i = 0; i < paths.length; i++) {
@@ -38,8 +45,9 @@ class FloydsAlgorithmTest {
     //-------------------------------------------------------
 
 
-    /*@Test
+    @Test
     void floydShouldTestOriginalWeights() {
+        double[][] weights1 = initializeWeights1();
         int[][] paths = new int[weights1.length][weights1.length];
         initializePaths(paths);
         double[][] distances = {
@@ -53,10 +61,11 @@ class FloydsAlgorithmTest {
         for (int i = 0; i < distances.length; i++) {
             assertArrayEquals(distances[i], weights1[i]);
         }
-    }*/
+    }
 
-    /*@Test
+    @Test
     void floydShouldTestOriginalPaths() {
+        double[][] weights1 = initializeWeights1();
         int[][] paths = new int[weights1.length][weights1.length];
         initializePaths(paths);
         int[][] pathsExp = {
@@ -70,10 +79,11 @@ class FloydsAlgorithmTest {
         for (int i = 0; i < paths.length; i++) {
             assertArrayEquals(pathsExp[i], paths[i]);
         }
-    }*/
+    }
 
-    /*@Test
+    @Test
     void floydShouldTestSecondWeights() {
+        double[][] weights2 = initializeWeights2();
         int[][] paths = new int[weights2.length][weights2.length];
         initializePaths(paths);
         double[][] distances = {
@@ -89,10 +99,11 @@ class FloydsAlgorithmTest {
         for (int i = 0; i < distances.length; i++) {
             assertArrayEquals(distances[i], weights2[i]);
         }
-    }*/
+    }
 
-    /*@Test
+    @Test
     void floydShouldTestSecondPaths() {
+        double[][] weights2 = initializeWeights2();
         int[][] paths = new int[weights2.length][weights2.length];
         initializePaths(paths);
         int[][] pathsExp = {
@@ -108,23 +119,25 @@ class FloydsAlgorithmTest {
         for (int i = 0; i < paths.length; i++) {
             assertArrayEquals(pathsExp[i], paths[i]);
         }
-    }*/
+    }
 
-    /*@Test
+    @Test
     void pathsShouldTestOriginalPath() {
+        double[][] weights1 = initializeWeights1();
         int[][] paths = new int[weights1.length][weights1.length];
         initializePaths(paths);
         FloydsAlgorithm.floydPaths(weights1, paths);
         assertEquals("3 4 ", FloydsAlgorithm.getPath(paths, 2, 0));
         assertEquals("4 0 ", FloydsAlgorithm.getPath(paths, 3, 1));
         assertEquals("", FloydsAlgorithm.getPath(paths, 3, 2));
-    }*/
+    }
 
-    /*@Test
+    @Test
     void pathsShouldTestSecondPath() {
+        double[][] weights2 = initializeWeights2();
         int[][] paths = new int[weights2.length][weights2.length];
         initializePaths(paths);
         FloydsAlgorithm.floydPaths(weights2, paths);
         assertEquals("3 4 ", FloydsAlgorithm.getPath(paths, 6, 2));
-    }*/
+    }
 }
